@@ -12,16 +12,28 @@ const Home = () => {
     const dispatch = useDispatch();
         useEffect(()=>{
             dispatch(loadGames());
-        });
+        }, [dispatch]);
         //get data back
-        const games = useSelector(state => state.games);
-        console.log(games);
+        const {popular, newGames, upcoming} = useSelector(state => state.games);
+        
+       
     return(
-        <div>
-            <h1>Home</h1>
-        </div>
+        <GameList>
+            <h2>Upcoming Games</h2>
+            <Games>
+                {upcoming.map(game => (
+                    <Game name={game.name} released={game.released} id={game.id} 
+                    image={game.background_image}
+                    key={game.id}
+                    />
+                ))}
+            </Games>
+        </GameList>
     );
 }
+
+const GameList = styled(motion.div)``;
+const Games = styled(motion.div)``;
 
 
 export default Home;
