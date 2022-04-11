@@ -43,5 +43,5 @@ const newGames = `games?key=1e0f3b6418da4c7a9174b702a5e7a388&dates=${lastYear},$
 export  const popularGamesUrl = () => `${base_url}${popular_games}${key}`;
 export const upcomingGamesUrl = () => `${base_url}${upcoming_games}${key}`;
 export const newGamesUrl = () => `${base_url}${newGames}${key}`;
-console.log(upcomingGamesUrl);
+
  
