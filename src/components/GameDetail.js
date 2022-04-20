@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 
 const GameDetail = () => {
     //data
-    const{screen, game} = useSelector(state => state.detail);
+    const{screen, game} = useSelector((state) => state.detail);
     return(
         <CardShadow>
             <Detail>
@@ -33,7 +33,7 @@ const GameDetail = () => {
                     <p>{game.description_raw}</p>
                 </div>
                 <div className="gallery">
-                    {screen.results.map(screen =>(
+                    {screen.results.map(screen => (
                         <img src={screen.image} key={screen.id} alt={screen.image}/>
                     ))}
                 </div>
