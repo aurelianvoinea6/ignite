@@ -12,6 +12,7 @@ function App() {
       <GlobalStyles/>
         <Nav />
         <Home />
+        
     </div>
   );
 }
