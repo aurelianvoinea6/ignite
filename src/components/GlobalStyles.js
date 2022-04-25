@@ -31,6 +31,7 @@ const GlobalStyles = createGlobalStyle `
         font-family: 'Abril Fatface', cursive;
         font-weight: lighter;
         color: blueviolet;
+        margin-left: 2rem;
     }
     h3{
         font-size: 1.3rem;
@@ -53,6 +54,7 @@ const GlobalStyles = createGlobalStyle `
         font-weight: bold;
         font-family: 'Montserrat', sans-serif;
     }
+    
 `;
 
 

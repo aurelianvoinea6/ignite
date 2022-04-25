@@ -6,6 +6,7 @@ import logo from '../img/logo.svg';
 //redux and routes
 import { fetchSearch } from '../actions/gamesAction';
 import { useDispatch } from "react-redux";
+import {fadeIn} from '../animations';
 
 
 
@@ -25,7 +26,7 @@ const Nav = () => {
         dispatch({type: "CLEAR_SEARCHED"});
     }
     return(
-        <StyledNav>
+        <StyledNav variants={fadeIn} initial='hidden' animate="show">
             <Logo onClick={clearSearched}>
                 <img src={logo} alt="logo" />
                 <h1>DAV Gaming</h1>
@@ -39,14 +40,15 @@ const Nav = () => {
 }
 
 const StyledNav = styled(motion.nav)`
+    display: inline;
     padding: 3rem 5rem;
     text-align: center;
     input{
-        width: 30%;
+        width: 40%;
         font-size: 1.5rem;
         padding: 0.5rem;
         border: none;
-        border-radius: 2rem;
+        border-radius: 0rem 1rem; 
         margin-top: 1rem;
         box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
         outline: none;
@@ -55,7 +57,6 @@ const StyledNav = styled(motion.nav)`
     button{
         font-size: 1.5rem;
         border: none;
-        border-radius: 2rem;
         margin-left: 1rem;
         padding: 0.5rem 2rem;
         background: blueviolet;
