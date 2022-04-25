@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import {useDispatch} from 'react-redux';
 import {loadDetail} from '../actions/detailAction';
 import {Link} from 'react-router-dom';
+import { smallImage } from "../util";
 
 const Game = ({name, released, image, id }) => {
     const stringPathId = id.toString();
@@ -21,7 +22,7 @@ const Game = ({name, released, image, id }) => {
             <Link to={`/game/${id}`}>
                 <motion.h3 layoutId={`title ${stringPathId}`}>{name}</motion.h3>
                 <p>{released}</p>
-                <motion.img layoutId={`image ${stringPathId}`} src={image} alt={name} />
+                <motion.img layoutId={`image ${stringPathId}`} src={smallImage(image, 640)} alt={name} />
             </Link>
         </StyledGame>
     );
