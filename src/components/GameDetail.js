@@ -6,6 +6,15 @@ import { motion } from "framer-motion";
 import { useSelector } from 'react-redux';
 import {useNavigate} from "react-router-dom";
 import { smallImage } from '../util';
+//images
+import playstation from '../img/playstation.svg';
+import steam from '../img/steam.svg';
+import xbox from '../img/xbox.svg';
+import nintendo from '../img/nintendo.svg';
+import apple from '../img/apple.svg';
+import gamepad from '../img/gamepad.svg';
+
+
 
 const GameDetail = ({pathId}) => {
     const navigate = useNavigate();
@@ -19,6 +28,24 @@ const GameDetail = ({pathId}) => {
 
         }
     };
+
+    //get platform images
+    const getPlatform = (platform) => {
+        switch(platform) {
+            case "PlayStation 4":
+                return playstation;
+            case "Xbox One":
+                return xbox;
+            case "PC":
+                return steam;
+            case "Nintendo Switch":
+                return nintendo;
+            case "IOS":
+                return apple;
+            default:
+                return gamepad;
+        }
+    }
     
     //data
     const{screen, game, isLoading} = useSelector((state) => state.detail);
@@ -36,7 +63,7 @@ const GameDetail = ({pathId}) => {
                         <h3>Platforms</h3>
                         <Platforms>
                             {game.platforms.map(data => (
-                                <h3 key={data.platform.id}>{data.platform.name}</h3>
+                                <img key={data.platform.id} alt="" src={getPlatform(data.platform.name)}></img>
                             ))}
                         </Platforms>
                     </Info>
@@ -67,6 +94,7 @@ const CardShadow = styled(motion.div)`
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 5;
     &::-webkit-scrollbar{
         width: 0.5rem;
     }
@@ -88,6 +116,7 @@ const Detail = styled(motion.div)`
     position: absolute;
     left: 10%;
     color: black;
+    z-index: 10;
     img{
         width: 100%;
     }
