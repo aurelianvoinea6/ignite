@@ -48,7 +48,7 @@ const StyledNav = styled(motion.nav)`
         font-size: 1.5rem;
         padding: 0.5rem;
         border: none;
-        border-radius: 0rem 1rem; 
+        border-radius: 1rem; 
         margin-top: 1rem;
         box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
         outline: none;
@@ -64,6 +64,7 @@ const StyledNav = styled(motion.nav)`
         font-weight: bold;
         font-family: 'Montserrat', sans-serif;
         transition: all 0.3s ease;
+        border-radius: 1rem;
     }
     button:hover{
         cursor: pointer;
